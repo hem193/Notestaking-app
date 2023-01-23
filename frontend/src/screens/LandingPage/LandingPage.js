@@ -9,7 +9,7 @@ const LandingPage = () => {
         <Row>
           <div className="intro-text">
             <div>
-              <h1 className="title">Welcome to Note Zipper</h1>
+              <h1 className="title">Welcome to NotesApp</h1>
               <p className="subtitle">One Safe place for all your notes</p>
             </div>
 
@@ -18,15 +18,15 @@ const LandingPage = () => {
                 <Button size="lg" className="landingbutton">
                   Login
                 </Button>
-                <a href="/register">
-                  <Button
-                    size="lg"
-                    className="landingbutton"
-                    variant="outline-primary"
-                  >
-                    Signup
-                  </Button>
-                </a>
+              </a>
+              <a href="/register">
+                <Button
+                  size="lg"
+                  className="landingbutton"
+                  variant="outline-primary"
+                >
+                  Signup
+                </Button>
               </a>
             </div>
           </div>
