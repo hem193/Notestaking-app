@@ -3,6 +3,12 @@ import { Button, Container, Row } from "react-bootstrap";
 import "./LandingStyle.css";
 
 const LandingPage = () => {
+  // useEffect(() => {
+  //   const userInfo = localStorage.getItem("userInfo");
+  //   if (userInfo) {
+  //     navigate("/mynotes");
+  //   }
+  // }, [navigate]);
   return (
     <div className="main">
       <Container>
