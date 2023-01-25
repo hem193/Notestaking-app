@@ -7,10 +7,22 @@ import {
   Form,
   FormControl,
 } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../../actions/userActions";
 
 function Header() {
   const history = useNavigate();
+
+  const dispatch = useDispatch();
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  const logoutHandler = () => {
+    dispatch(logout());
+    history("/");
+  };
+
   return (
     <Navbar bg="primary" expand="lg" variant="dark">
       <Container>
@@ -36,12 +48,7 @@ function Header() {
             <NavDropdown title="Hemanth" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">My Profile</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item
-                onClick={() => {
-                  localStorage.removeItem("userInfo");
-                  history("/");
-                }}
-              >
+              <NavDropdown.Item onClick={logoutHandler}>
                 Logout
               </NavDropdown.Item>
             </NavDropdown>
