@@ -2,7 +2,11 @@ import { combineReducers, applyMiddleware } from "redux";
 import { legacy_createStore as createStore } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { userLoginReducer, userRegisterReducer } from "./reducers/userReducers";
+import {
+  userLoginReducer,
+  userRegisterReducer,
+  userUpdateReducer,
+} from "./reducers/userReducers";
 import {
   noteCreateReducer,
   noteDeleteReducer,
@@ -17,6 +21,7 @@ const reducer = combineReducers({
   noteCreate: noteCreateReducer,
   noteDelete: noteDeleteReducer,
   noteUpdate: noteUpdateReducer,
+  userUpdate: userUpdateReducer,
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo")
